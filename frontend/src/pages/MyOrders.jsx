@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import api from '../services/api';
+import api from '../services/app';
 import { useAuth } from '../context/AuthContext';
 
 export default function MyOrders() {

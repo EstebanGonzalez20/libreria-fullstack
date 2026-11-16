@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookMarked, Truck, Percent } from 'lucide-react';
-import api from '../services/api';
+import api from '../services/app';
 import ProductCard from '../components/ProductCard';
 
 export default function Home() {

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { CheckCircle2, AlertCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
-import api from '../services/api';
+import api from '../services/app';
 
 export default function Checkout() {
   const { cart, subtotal, estimatedDiscount, total, clearCart } = useCart();

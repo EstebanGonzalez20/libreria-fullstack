@@ -1,10 +1,23 @@
+const mysql = require('mysql2/promise');
 const bcrypt = require('bcryptjs');
+require('dotenv').config();
 const { sequelize, User, Category, Product } = require('../models');
 
 async function seed() {
   try {
+    // 1. Crear la base de datos si no existe
+    const connection = await mysql.createConnection({
+      host: process.env.DB_HOST || 'localhost',
+      port: process.env.DB_PORT || 3306,
+      user: process.env.DB_USER || 'root',
+      password: process.env.DB_PASSWORD || ''
+    });
+    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME || 'libreria_db'}\`;`);
+    await connection.end();
+
+    // 2. Sincronizar tablas y cargar datos iniciales
     await sequelize.sync({ force: true });
-    console.log('Base de datos sincronizada.');
+    console.log('Base de datos y tablas sincronizadas.');
 
     const adminHash = await bcrypt.hash('admin123', 10);
     const clientHash = await bcrypt.hash('cliente123', 10);

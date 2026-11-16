@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Search, Filter } from 'lucide-react';
-import api from '../services/api';
+import api from '../services/app';
 import ProductCard from '../components/ProductCard';
 
 export default function Catalog() {

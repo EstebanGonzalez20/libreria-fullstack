@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Plus, Edit, Trash2, AlertTriangle } from 'lucide-react';
-import api from '../services/api';
+import api from '../services/app';
 
 export default function AdminDashboard() {
   const [products, setProducts] = useState([]);

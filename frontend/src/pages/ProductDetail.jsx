@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ShoppingCart, ArrowLeft, Barcode } from 'lucide-react';
-import api from '../services/api';
+import api from '../services/app';
 import { useCart } from '../context/CartContext';
 
 export default function ProductDetail() {
