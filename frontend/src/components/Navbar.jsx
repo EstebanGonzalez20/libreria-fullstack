@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { BookOpen, ShoppingCart, User, LogOut, ShieldCheck, Package } from 'lucide-react';
+import { ShoppingCart, User, LogOut, ShieldCheck, Package } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 
@@ -18,8 +18,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <Link to="/" className="flex items-center space-x-2 text-xl font-bold tracking-tight">
-            <BookOpen className="h-7 w-7 text-amber-400" />
-            <span>Librería<span className="text-amber-400">Pro</span></span>
+            <img
+              src="/thoth.png"
+              alt="Logo LibreríaPro"
+              className="h-7 w-7 object-contain"
+            />
+            <span>Librería<span className="text-amber-400">Thoth</span></span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">
